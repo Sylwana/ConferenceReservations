@@ -9,3 +9,11 @@ class Room(models.Model):
         return "{}".format(self.name)
 
 
+class Reservation(models.Model):
+    date = models.DateField()
+    room = models.ForeignKey(Room)
+    comment = models.CharField(max_length=127)
+
+    def __str__(self):
+        return "{} {}".format(self.room, self.date)
+
