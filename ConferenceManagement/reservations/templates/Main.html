@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Conference Reservations Service</title>
+
+</head>
+<body>
+ <script>
+ </script>
+{% if message %}
+{{ message }}
+{% endif %}
+{% if rooms %}
+<table>
+    {% for r in rooms %}
+<tr>
+<td> {{ forloop.counter }}</td>
+<td> <a href="/room/{{ r.id }}"><button type="button">{{ r.name }} </button></a></td>
+<td><a href="/room/delete/{{ r.id }}"><button type="button">Delete</button></a></td>
+<td><a href="/room/modify/{{ r.id }}/"><button type="button">Modify</button></a></td>
+<td></td>
+    </tr>
+{% endfor %}
+</table>
+
+{% endif %}
+<a href="/room/new/"><button type="button">New room</button></a>
+</body>
+</html>

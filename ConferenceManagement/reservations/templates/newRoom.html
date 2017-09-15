@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<form method="POST">
+<head>
+    <meta charset="UTF-8">
+    <title>Add a Room</title>
+</head>
+<body>
+
+        <b>Room:</b>
+        <input type="text" name="name">
+        <br>
+        <b>Capacity:</b>
+        <input type="text" name="capacity">
+        <br>
+        <b>Projector provided:</b>
+        <input type="checkbox" name="projector_available" value="1">
+    </label><br>
+    <input type="submit" name="submit">
+{% csrf_token %}
+
+</body>
+</form>
+
+</html>

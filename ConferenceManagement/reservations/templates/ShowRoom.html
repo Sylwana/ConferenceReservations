@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<form method="POST">
+<head>
+    <meta charset="UTF-8">
+    <title>Conference Reservations Service</title>
+</head>
+<body>
+<h3>Room details:</h3>
+<b>Room</b>: {{ room.name }} <br>
+<b>Capacity:</b> {{ room.capacity }} <br>
+<b>projector available:</b> {{ room.projector_available }}
+<br>
+
+<h3>Reservation details:</h3>
+
+{% if reservations %}
+   {% for r in reservations %}
+    {{ forloop.counter }}. <b>Date</b>:{{ r.date }} <br>
+    <b>Comment:</b> {{ r.comment }} <br>
+
+    {% endfor %}
+{% endif %}
+
+{% if taken %}
+   {% for t in taken %}
+    {{ forloop.counter }}. <b>Date</b>:{{ t }} <br>
+
+    {% endfor %}
+{% endif %}
+<a href="/reservation/{{room.id}}/"><button type="button">New reservation</button></a><br>
+{% load static %}
+<img src="{% static "reservations/mini.jpg" alt="My image"/>
+</body>
+</form>
+</html>

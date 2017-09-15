@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<form method="POST">
+<head>
+    <meta charset="UTF-8">
+    <title>New Reservation</title>
+</head>
+<body>
+
+{% if message %}
+{{ message }}
+{% endif %}
+<br>
+
+        <b>Make a reservation of the room:</b> {{room.name}}
+        <br>
+        <b>Comment:</b>
+        <input type="text" name="comment">
+        <br>
+        <b>Date:</b>
+        <input type="date" name="date">
+    </label><br>
+    <input type="submit" name="submit">
+{% csrf_token %}
+
+</body>
+</form>
+
+</html>
